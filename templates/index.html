@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Categorias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</head>
+<body>
+    <h1>Recomendação de Categorias</h1>
+    <main>
+        <div class="form">
+            <h2>Carrinho</h2>
+            <label for="subcategories">Selecione subcategorias:</label>
+            <select id="subcategories">
+                <option value=""></option>
+                {% for subcategory in subcategories %}
+                    <option value="{{ subcategory }}">{{ subcategory }}</option>
+                {% endfor %}
+            </select>
+            <ul id="selected-list"></ul>
+            <button id="recommend-button">Obter Recomendações</button>
+        </div>
+        
+        <div class="result">
+                <h2>Recomendações</h2>
+                <div class="dashboard">
+                    <table id="recommendations-list"></table>
+                    <div>
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+        </div>
+
+
+    </main>
+</body>
+</html>
