@@ -19,7 +19,7 @@ O projeto consiste em uma aplicação web, na qual o usuário insere seu carrinh
 
 1. Entre na pasta root do projeto, abra o terminal e rode o comando:
 
-``python app.py
+`python app.py`
 
 2. Após isso, abra o link que irá aparecer no console.
 
